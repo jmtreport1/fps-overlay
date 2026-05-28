@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Overlay - Riva Tuner Style</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay-container">
+        <!-- Main Overlay -->
+        <div class="overlay" id="overlay">
+            <div class="overlay-header">
+                <span class="header-title">Performance Monitor</span>
+                <div class="header-controls">
+                    <button class="control-btn" id="toggleBtn" title="Toggle Graph">▼</button>
+                    <button class="control-btn" id="settingsBtn" title="Settings">⚙</button>
+                </div>
+            </div>
+
+            <div class="overlay-content">
+                <!-- FPS Section -->
+                <div class="metric-row fps-section">
+                    <div class="metric-label">FPS</div>
+                    <div class="metric-value" id="fpsValue">0</div>
+                    <div class="metric-unit">fps</div>
+                </div>
+
+                <!-- CPU Section -->
+                <div class="metric-row cpu-section">
+                    <div class="metric-label">CPU</div>
+                    <div class="metric-value" id="cpuValue">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-temp" id="cpuTemp">0°C</div>
+                </div>
+
+                <!-- GPU Section -->
+                <div class="metric-row gpu-section">
+                    <div class="metric-label">GPU</div>
+                    <div class="metric-value" id="gpuValue">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-temp" id="gpuTemp">0°C</div>
+                </div>
+
+                <!-- Memory Section -->
+                <div class="metric-row memory-section">
+                    <div class="metric-label">RAM</div>
+                    <div class="metric-value" id="memValue">0</div>
+                    <div class="metric-unit">GB</div>
+                </div>
+
+                <!-- Frame Time -->
+                <div class="metric-row frametime-section">
+                    <div class="metric-label">Frame</div>
+                    <div class="metric-value" id="frameTimeValue">0.0</div>
+                    <div class="metric-unit">ms</div>
+                </div>
+            </div>
+
+            <!-- Graph Section (collapsible) -->
+            <div class="graph-section" id="graphSection">
+                <canvas id="fpsChart" class="chart"></canvas>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button class="close-btn" id="closeSettings">✕</button>
+            </div>
+            <div class="settings-body">
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="showGraph" checked> Show Graph
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="showTemp" checked> Show Temperature
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="showMemory" checked> Show Memory
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="showFrameTime" checked> Show Frame Time
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="alwaysOnTop" checked> Always on Top
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Opacity:
+                        <input type="range" id="opacitySlider" min="0.3" max="1" step="0.1" value="0.9">
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Update Rate:
+                        <select id="updateRate">
+                            <option value="16">60 FPS</option>
+                            <option value="33">30 FPS</option>
+                            <option value="50">20 FPS</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Color Theme:
+                        <select id="colorTheme">
+                            <option value="default">Green</option>
+                            <option value="cyan">Cyan</option>
+                            <option value="orange">Orange</option>
+                            <option value="purple">Purple</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

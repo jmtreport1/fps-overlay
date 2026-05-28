@@ -1,0 +1,19 @@
+{
+  "name": "fps-overlay",
+  "version": "1.0.0",
+  "description": "Riva Tuner-style FPS overlay for games with CPU, GPU, and system monitoring",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'No build process needed for this project'"
+  },
+  "keywords": [
+    "fps",
+    "overlay",
+    "riva-tuner",
+    "performance",
+    "monitoring"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
